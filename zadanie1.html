@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        button {
+            display: block;
+            text-transform: uppercase;
+            border: 1px dashed black;
+            text-align: center;
+            margin: 10px auto;
+        }
+        div {
+            width: 30px;
+            height: 30px;
+            background-color: black;
+            margin: 5px;
+            float: left;
+            color: white;
+            text-align: center;
+            line-height: 30px;
+            border: 2px solid black;
+        }
+        .circle {
+            background-color: white;
+            border-radius: 50%;
+            color: black;
+            border: 2px solid black;
+        }
+
+    </style>
+</head>
+<body>
+    <button>Kliknij</button>
+
+    <script>
+        const btn = document.querySelector("button");
+        let number = 1;
+        const addElement = () => {
+            var div = document.createElement("div");
+            if (number % 5 == 0 ) {
+                div.className = "circle";
+            } else {
+                div.className = "div";   
+        }
+        document.body.appendChild(div);
+        div.innerText = number
+        number++
+        }
+
+        btn.addEventListener("click", addElement);
+    </script>
+</body>
+</html>
