@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .small {
+            font-size: 12px;
+            color: black;
+        }
+        .big {
+            font-size: 20px;
+            color: black;
+        }
+    </style>
+</head>
+<body>
+    <button>Dodaj element</button>
+
+    <script>
+        const btn = document.querySelector("button");
+        let number = 1;
+        let addElement = () => {
+            let ulList = document.createElement("ul");
+            document.body.appendChild(ulList);
+            let liList = document.createElement("li");
+            if (number % 3 == 0) {
+                liList.classList.add("big");
+            } else {
+                liList.classList.add("small");
+            }
+            liList.innerText = number;
+            ulList.appendChild(liList);
+            number += 2;
+        };
+
+        btn.addEventListener("click", addElement);
+
+    </script>
+</body>
+</html>
