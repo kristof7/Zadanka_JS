@@ -1,8 +1,15 @@
 
-
 document.body.addEventListener("mousemove", (event) => {
     const text = document.querySelector("h1");
-    text.innerText = `${event.clientX}, ${event.clientY}`;
+    const x = event.clientX;
+    const y = event.clientY;
+    const width = window.innerWidth;
+    const height = window.innerHeight;
+    text.innerText = x +", " + y;
 
-    document.body.style.backgroundColor = `rgb(${event.clientX /6.5}, ${event.clientY /3.5}, ${event.clientX / 6.5})`;
+    const red = x / width * 100;
+    const green = y / height * 100;
+    const blue = ((x / width * 100) + (y / height * 100)) /2;
+
+    document.body.style.backgroundColor = `rgb(${red}%, ${green}%, ${blue}%)`;
 });
