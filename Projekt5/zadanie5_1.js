@@ -1,17 +1,18 @@
 const input = document.getElementById("pass");
 const div = document.querySelector(".message");
 
-const password = "user";
-const message = "Sprawdź mnie: https://github.com/kristof7";
+const passwords = ["krzysztof", "wiosna", "user", "123", "111"];
+const messages = ["Sprawdź mnie: https://github.com/kristof7", "piekna pora roku", "Witaj na mojej stronie", "..456789", "111 dalmatynczykow"];
 
 input.addEventListener("input", (e) => {
-// console.log(e.target.value);
-if(password === e.target.value) {
-    div.textContent = message;
-    e.target.value = "";
-} else {
     div.textContent = "";
-}
+    const text = e.target.value;
+    passwords.forEach((password, index) => {
+        if (password === text) {
+            div.textContent = messages[index];
+            e.target.value = "";
+        }
+    })
 });
 
 input.addEventListener("focus", (e) => {
