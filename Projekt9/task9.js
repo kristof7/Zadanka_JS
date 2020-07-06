@@ -1,12 +1,12 @@
 const slideList = [{
     img: "images/img1.jpg",
-    text: 'Pierwszy tekst'
+    text: 'First text'
 },{
     img: "images/img2.jpg",
-    text: 'Drugi tekst'
+    text: 'Second text'
 },{
     img: "images/img3.jpg",
-    text: 'Trzeci tekst'
+    text: 'Third text'
 }]
 
 const image = document.querySelector("img.slider");
